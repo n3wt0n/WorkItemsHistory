@@ -1,13 +1,12 @@
 ﻿{
   "manifestVersion": 1,
-  "id": "WorkItemHistory",
-  "version": "0.1.126",
-  "name": "WorkItem History",
-  "description": "A Visual Studio Team Services extension to show the work items history.",
-  "publisher": "DBTek",
-  "scopes": [
-    "vso.work"
-  ],
+  "id": "WorkItemsHistory",
+  "version": "0.1.200",
+  "name": "WorkItems History",
+  "description": "A Visual Studio Team Services extension to show the Work Items history.",
+  "publisher": "DB",
+  "scopes": [ "vso.work" ],
+  "galleryFlags": [ "Public" ],
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
@@ -63,6 +62,27 @@
   ],
   "tags": [
     "History",
-    "Backlog"
-  ]
+    "Backlog",
+    "Work items"
+  ],
+  "categories": [
+    "Plan and track"
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE-TERMS.md"
+    }
+  },
+  "branding": {
+    "color": "rgb(51, 65, 133)",
+    "theme": "dark"
+  },
+  "links": {
+    "support": {
+      "uri": "https://github.com/n3wt0n/WorkItemsHistory"
+    }
+  }
 }
