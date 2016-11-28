@@ -1,0 +1,42 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>WorkItem History</title>
+    <script src="scripts/lib/VSS.SDK.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="scripts/lib/jquery.timeago.js"></script>
+    <link href="css/Default.css" rel="stylesheet" />
+</head>
+<body>
+    <script type="text/javascript">
+        // Initialize the VSS sdk
+        VSS.init({
+            setupModuleLoader: true,
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true,
+            moduleLoaderConfig: {
+                paths: {
+                    "Scripts": "scripts"
+                }
+            }
+        });
+
+        // Wait for the SDK to be initialized
+        VSS.ready(function () {
+            VSS.require(["Scripts/app"], function (app) { });            
+        });        
+    </script>    
+    <div id="show-container-outer" > 
+        <div id="waitTarget" style="position:absolute; right:0px; left:0px; top: 100px;"></div>               
+        <div id="data-container" style="width: 100%; margin-left: 16px;"></div>                
+    </div>  
+    <div>        
+        <button id="btnLoadMore" style="margin-top: 15px; margin-left: 16px;"><div class="icon icon-refresh"></div> Load more Work Items...</button>
+    </div>  
+    <div id="nothingToShow" style="display: none;">
+        <br />
+        <div class="alert-box notice" ><span>Notice: </span>There's nothing to show here...</div>
+    </div>
+</body>
+</html>

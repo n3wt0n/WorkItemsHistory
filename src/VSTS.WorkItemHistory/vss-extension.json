@@ -1,0 +1,68 @@
+﻿{
+  "manifestVersion": 1,
+  "id": "WorkItemHistory",
+  "version": "0.1.126",
+  "name": "WorkItem History",
+  "description": "A Visual Studio Team Services extension to show the work items history.",
+  "publisher": "DBTek",
+  "scopes": [
+    "vso.work"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "icons": {
+    "default": "images/logo.png"
+  },
+  "contributions": [
+    {
+      "id": "openWorkItemHistory",
+      "type": "ms.vss-web.hub",
+      "description": "Adds a 'History' hub to the Work hub group.",
+      "targets": [
+        "ms.vss-work-web.work-hub-group"
+      ],
+      "properties": {
+        "name": "History",
+        "order": 99,
+        "uri": "index.html"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "addressable": true
+    },
+    {
+      "path": "scripts/app.js",
+      "contentType": "text/javascript",
+      "addressable": true
+    },
+    {
+      "path": "scripts/lib/VSS.SDK.js",
+      "contentType": "text/javascript",
+      "addressable": true
+    },
+
+    {
+      "path": "scripts/lib/jquery.timeago.js",
+      "contentType": "text/javascript",
+      "addressable": true
+    },
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "css",
+      "addressable": true
+    }
+  ],
+  "tags": [
+    "History",
+    "Backlog"
+  ]
+}
