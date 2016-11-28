@@ -84,6 +84,8 @@
     <Content Include="scripts\lib\VSS.SDK.js" />
     <Content Include="Web.config" />
     <Content Include="vss-extension.json" />
+    <Content Include="LICENSE-TERMS.md" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
