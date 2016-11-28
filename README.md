@@ -13,6 +13,8 @@ A Visual Studio Team Services project and some work items.
 ##Usage
 Install the Extension in your account. Go to the "Work" section and click the "History" hub (in the top navigation bar, near "Backlog" and "Queries").
 
+You can find this extension [here on the VS Marketplace](https://marketplace.visualstudio.com/items?itemName=DB.WorkItemHistory)
+
 ##Contribute
 Contributions to this extension are welcome. Here is how you can contribute to WorkItems History:  
 
