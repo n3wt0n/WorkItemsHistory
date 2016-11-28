@@ -92,6 +92,7 @@
     </None>
     <TypeScriptCompile Include="scripts\typings\knockout.d.ts" />
     <TypeScriptCompile Include="scripts\typings\q.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\require.d.ts" />
     <TypeScriptCompile Include="scripts\typings\tfs.d.ts" />
     <TypeScriptCompile Include="scripts\typings\vss.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery.d.ts" />
