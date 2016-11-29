@@ -1,4 +1,6 @@
 # WorkItems History
+![](https://dbtek.visualstudio.com/_apis/public/build/definitions/e3c0a1d3-c6aa-487e-913a-4963d197e16c/32/badge)
+
 A Visual Studio Team Services extension to show the work items history.
 
 ![WorkItems History Screenshot](https://github.com/n3wt0n/WorkItemsHistory/raw/master/img/WorkItemsHistory.png)
