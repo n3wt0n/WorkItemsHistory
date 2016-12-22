@@ -86,18 +86,40 @@
                                 var workItemColor = "rgb(242, 203, 29)"; //Task
 
                                 switch (this.getColumnValue(dataIndex, column.index)) {
-                                    case "Bug":
-                                        workItemColor = "rgb(204, 41, 61)";
+                                    case "Epic":
+                                        workItemColor = "rgb(225, 123, 0)"; //Epic
                                         break;
                                     case "Feature":
-                                        workItemColor = "rgb(119, 59, 147)";
+                                        workItemColor = "rgb(119, 59, 147)"; //Feature
+                                        break;
+                                    case "Impediment":
+                                        workItemColor = "rgb(255, 157, 0)"; //Impediment
                                         break;
                                     case "Product Backlog Item":
-                                        workItemColor = "rgb(0, 156, 204)";
+                                        workItemColor = "rgb(0, 156, 204)"; //PBI
+                                        break;
+                                    case "Task":
+                                        workItemColor = "rgb(242, 203, 29)"; //Task
+                                        break;
+                                    case "Test Case":
+                                        workItemColor = "rgb(255, 157, 0)"; //Test Case
+                                        break;
+                                    case "Bug":
+                                        workItemColor = "rgb(204, 41, 61)"; //Bug
                                         break;
                                     default:
-                                        workItemColor = "rgb(242, 203, 29)"; //Task
+                                        workItemColor = "rgb(100, 100, 100)"; //Generic
                                 }
+
+                                //MISSING:
+                                //Code Review Request
+                                //Code Review Response
+                                //Feedback Request
+                                //Feedback Response
+                                //Shared Steps -- not shown
+                                //Shared Parameter -- not shown
+                                //Test Plan -- not shown
+                                //Test Suite -- not shown
 
                                 return $("<div class='grid-cell'/>")
                                     .width(column.width || 5)
