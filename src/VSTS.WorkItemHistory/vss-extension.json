@@ -1,7 +1,7 @@
 ﻿{
   "manifestVersion": 1,
   "id": "WorkItemsHistory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "WorkItems History",
   "description": "A Visual Studio Team Services extension to show the Work Items history.",
   "publisher": "DB",
