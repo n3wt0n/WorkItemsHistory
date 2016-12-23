@@ -1,8 +1,10 @@
 ﻿VSS.require(["VSS/Service", "TFS/WorkItemTracking/RestClient", "VSS/Controls", "VSS/Controls/Grids", "TFS/WorkItemTracking/Services", "VSS/Controls/StatusIndicator"], function (VSS_Service, TFS_Wit_WebApi, Controls, Grids, workItemServices, StatusIndicator) {
     var projectId = VSS.getWebContext().project.id;
-    var host = "https://" + VSS.getWebContext().account.name + ".visualstudio.com";
+    var host = VSS.getWebContext().account.uri;
     var projectName = VSS.getWebContext().project.name;
 
+    //var isVSTS = VSS.getWebContext().account.uri.indexOf("visualstudio.com") > -1;
+   
     var container = $("#data-container");
     var grid;
     var gridData;
@@ -12,6 +14,12 @@
     var query = {
         query: "Select [System.ID] From WorkItems Where [System.TeamProject] = '" + projectName + "' Order by [System.ChangedDate] Desc"
     };
+
+    //var WITsHash = {};
+
+    //witClient.getWorkItemTypes(projectName).then(function (result) {         
+    //    result.forEach(function (wit) { WITsHash[wit.name] = wit.color });
+    //});
 
     witClient.queryByWiql(query).then(function (result) {
         // Generate an array of all work item ID's
@@ -111,16 +119,8 @@
                                         workItemColor = "rgb(100, 100, 100)"; //Generic
                                 }
 
-                                //MISSING:
-                                //Code Review Request
-                                //Code Review Response
-                                //Feedback Request
-                                //Feedback Response
-                                //Shared Steps -- not shown
-                                //Shared Parameter -- not shown
-                                //Test Plan -- not shown
-                                //Test Suite -- not shown
-
+                                //var workItemColor = '#' + WITsHash[this.getColumnValue(dataIndex, column.index)];
+                               
                                 return $("<div class='grid-cell'/>")
                                     .width(column.width || 5)
                                     .css("background-color", workItemColor)
@@ -142,8 +142,7 @@
                                 indentIndex,
                                 columnOrder) {
 
-                                var item = grid.getRowData(dataIndex);
-                                var workItemFormUrl = host + "/" + projectName.replace(" ", "%20") + "/_workitems?id=" + item[0];
+                                var item = grid.getRowData(dataIndex);                                
 
                                 return $("<div class='grid-cell'/>")
                                     .width(column.width || 150)
@@ -164,8 +163,7 @@
                                 indentIndex,
                                 columnOrder) {
 
-                                var item = grid.getRowData(dataIndex);
-                                var workItemFormUrl = host + "/" + projectName.replace(" ", "%20") + "/_workitems?id=" + item[0];
+                                var item = grid.getRowData(dataIndex);                                
 
                                 return $("<div class='grid-cell'/>")
                                     .width(column.width || 400)
