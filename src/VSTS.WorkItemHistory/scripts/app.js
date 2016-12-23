@@ -3,7 +3,7 @@
     var host = VSS.getWebContext().account.uri;
     var projectName = VSS.getWebContext().project.name;
 
-    //var isVSTS = VSS.getWebContext().account.uri.indexOf("visualstudio.com") > -1;
+    var isVSTS = VSS.getWebContext().account.uri.indexOf("visualstudio.com") > -1;
    
     var container = $("#data-container");
     var grid;
@@ -15,11 +15,14 @@
         query: "Select [System.ID] From WorkItems Where [System.TeamProject] = '" + projectName + "' Order by [System.ChangedDate] Desc"
     };
 
-    //var WITsHash = {};
+    var WITsHash = {};
 
-    //witClient.getWorkItemTypes(projectName).then(function (result) {         
-    //    result.forEach(function (wit) { WITsHash[wit.name] = wit.color });
-    //});
+    if (isVSTS) {
+        //Currently TFS doesn't support the "color" property for the WITs
+        witClient.getWorkItemTypes(projectName).then(function (result) {
+            result.forEach(function (wit) { WITsHash[wit.name] = wit.color });
+        });
+    }
 
     witClient.queryByWiql(query).then(function (result) {
         // Generate an array of all work item ID's
@@ -91,35 +94,38 @@
                                 indentIndex,
                                 columnOrder) {
 
-                                var workItemColor = "rgb(242, 203, 29)"; //Task
+                                var workItemColor = "rgb(100, 100, 100)"; //Generic
 
-                                switch (this.getColumnValue(dataIndex, column.index)) {
-                                    case "Epic":
-                                        workItemColor = "rgb(225, 123, 0)"; //Epic
-                                        break;
-                                    case "Feature":
-                                        workItemColor = "rgb(119, 59, 147)"; //Feature
-                                        break;
-                                    case "Impediment":
-                                        workItemColor = "rgb(255, 157, 0)"; //Impediment
-                                        break;
-                                    case "Product Backlog Item":
-                                        workItemColor = "rgb(0, 156, 204)"; //PBI
-                                        break;
-                                    case "Task":
-                                        workItemColor = "rgb(242, 203, 29)"; //Task
-                                        break;
-                                    case "Test Case":
-                                        workItemColor = "rgb(255, 157, 0)"; //Test Case
-                                        break;
-                                    case "Bug":
-                                        workItemColor = "rgb(204, 41, 61)"; //Bug
-                                        break;
-                                    default:
-                                        workItemColor = "rgb(100, 100, 100)"; //Generic
+                                if (isVSTS && Object.keys(WITsHash).length > 0) {
+                                    workItemColor = '#' + WITsHash[this.getColumnValue(dataIndex, column.index)];
                                 }
-
-                                //var workItemColor = '#' + WITsHash[this.getColumnValue(dataIndex, column.index)];
+                                else {
+                                    switch (this.getColumnValue(dataIndex, column.index)) {
+                                        case "Epic":
+                                            workItemColor = "rgb(225, 123, 0)"; //Epic
+                                            break;
+                                        case "Feature":
+                                            workItemColor = "rgb(119, 59, 147)"; //Feature
+                                            break;
+                                        case "Impediment":
+                                            workItemColor = "rgb(255, 157, 0)"; //Impediment
+                                            break;
+                                        case "Product Backlog Item":
+                                            workItemColor = "rgb(0, 156, 204)"; //PBI
+                                            break;
+                                        case "Task":
+                                            workItemColor = "rgb(242, 203, 29)"; //Task
+                                            break;
+                                        case "Test Case":
+                                            workItemColor = "rgb(255, 157, 0)"; //Test Case
+                                            break;
+                                        case "Bug":
+                                            workItemColor = "rgb(204, 41, 61)"; //Bug
+                                            break;
+                                        default:
+                                            workItemColor = "rgb(100, 100, 100)"; //Generic
+                                    }
+                                }                                
                                
                                 return $("<div class='grid-cell'/>")
                                     .width(column.width || 5)
