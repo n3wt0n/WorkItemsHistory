@@ -80,6 +80,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\lib\jquery-3.1.1.min.js" />
     <Content Include="scripts\lib\jquery.timeago.js" />
     <Content Include="scripts\lib\VSS.SDK.js" />
     <Content Include="Web.config" />

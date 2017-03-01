@@ -1,7 +1,7 @@
 ﻿{
   "manifestVersion": 1,
   "id": "WorkItemHistory",
-  "version": "0.1.213",
+  "version": "0.1.214",
   "name": "WorkItems History",
   "description": "A Visual Studio Team Services extension to show the Work Items history.",
   "publisher": "DBTek",
@@ -44,7 +44,11 @@
       "contentType": "text/javascript",
       "addressable": true
     },
-
+    {
+      "path": "scripts/lib/jquery-3.1.1.min.js",
+      "contentType": "text/javascript",
+      "addressable": true
+    },
     {
       "path": "scripts/lib/jquery.timeago.js",
       "contentType": "text/javascript",
