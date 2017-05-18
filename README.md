@@ -5,21 +5,21 @@ A Visual Studio Team Services extension to show the work items history.
 
 ![WorkItems History Screenshot](https://github.com/n3wt0n/WorkItemsHistory/raw/master/img/WorkItemsHistory.png)
 
-##What
+## What
 This extension adds a "History" hub to the Work section of VSTS which allows you to see the history of the added/modified work items.
 
-##Why
+## Why
 Working in a team is not always easy, especially when you need to have "things under control". With this extension, you can have a little more control of what is happening on your work.
 
-##Prerequisites
+## Prerequisites
 A Visual Studio Team Services project and some work items.
 
-##Usage
+## Usage
 Install the Extension in your account. Go to the "Work" section and click the "History" hub (in the top navigation bar, near "Backlog" and "Queries").
 
 You can find this extension [here on the VS Marketplace](https://marketplace.visualstudio.com/items?itemName=DB.WorkItemsHistory)
 
-##Contribute
+## Contribute
 Contributions to this extension are welcome. Here is how you can contribute to WorkItems History:  
 
 - Submit bugs and help us verify fixes  
