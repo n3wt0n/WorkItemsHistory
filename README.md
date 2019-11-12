@@ -1,5 +1,6 @@
 # WorkItems History
-![](https://dbtek.visualstudio.com/_apis/public/build/definitions/e3c0a1d3-c6aa-487e-913a-4963d197e16c/32/badge)
+## THIS EXTENSIONS HAS BEEN UNPUBLISHED FROM THE MARKETPLACE AND IT'S NOT SUPPORTED ANYMORE
+## It is been superseeded by some features already embedded into Azure DevOps
 
 A Visual Studio Team Services extension to show the work items history.
 
